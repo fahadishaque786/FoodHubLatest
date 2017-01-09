@@ -1,0 +1,49 @@
+<div id="page-content" class="page-content">
+			<div id="page-content-scroll">
+
+				 
+						<div class="pageapp-login"
+							ng-controller="RegistrationCtrl as ctrl">
+							<a href="#" class="pageapp-login-logo"> <img
+								src="theme/images/preload-logo.png">
+							</a>
+							<form name="registrationForm"
+								ng-submit="ctrl.registerNewUser(registrationForm)"
+								novalidate="novalidate" autocomplete="off">
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-user"></i> <input type="text"
+										name="fullName" placeholder="Full Name"
+										ng-model="ctrl.user.fullName" ng-minlength="3"
+										required="required" />
+								</div>
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-user"></i> <input type="text"
+										name="userName" placeholder="Username"
+										ng-model="ctrl.user.userName" ng-minlength="5"
+										required="required" />
+								</div>
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-envelope"></i> <input type="email"
+										name="email" ng-model="ctrl.user.email" placeholder="Email"
+										required="required" />
+								</div>
+								<div class="pageapp-login-input full-bottom">
+									<i class="login-icon fa fa-lock"></i> <input type="password"
+										name="password" ng-model="ctrl.user.password"
+										placeholder="Password" ng-minlength="5" required="required" />
+								</div>
+
+								<input type="submit"
+									class="buttonWrap button button-green contactSubmitButton no-bottom"
+									value="Create Account" />
+							</form>
+							<div class="pageapp-login-social">
+								<a href="#"
+									class="button button-blue button-icon button-full half-top full-bottom"><i
+									class="fa fa-lock"></i>Login Here</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+

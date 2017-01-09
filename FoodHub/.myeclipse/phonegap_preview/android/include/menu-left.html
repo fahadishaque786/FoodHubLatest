@@ -1,0 +1,51 @@
+<div class="sidebar-left sidebar-light">
+    <div class="sidebar-scroll">
+        <div class="sidebar-header sidebar-header-background">
+            <h1>Food Hub</h1>
+            <h2>Just on click away.</h2>
+            <img class="sidebar-logo-image preload-image" data-original="theme/images/preload-logo.png">
+            <div class="sidebar-header-controls">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-phone"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="close-sidebar"><i class="fa fa-times"></i></a>
+            </div>
+        </div>        
+        <div class="sidebar-divider" >Navigation</div>
+        <div class="sidebar-menu"> 
+            <a class="menu-item active-item" href="#home">
+                <i class="bg-red-dark fa fa-star-o"></i>Welcome<i class="fa fa-circle"></i> 
+            </a> 
+            <a class="menu-item" href="#profile">
+                <i class="bg-red-dark fa fa-lock"></i>Edit Profile<i class="fa fa-circle"></i>  
+            </a>
+            <div ng-if="!flag">
+	            <a class="menu-item" href="#login">
+	                <i class="bg-red-dark fa fa-lock"></i>Login<i class="fa fa-circle"></i>  
+	            </a>
+            </div>
+            <div ng-if="flag">
+	            <a class="menu-item" href="#profile">
+	                <i class="bg-red-dark fa fa-lock"></i>Edit Profile<i class="fa fa-circle"></i>  
+	            </a>
+            </div>
+            <div ng-if="flag">
+	            <a class="menu-item" href="#resetPassword">
+	                <i class="bg-red-dark fa fa-lock"></i>Reset Password<i class="fa fa-circle"></i>  
+	            </a>
+            </div>
+             <div ng-if="flag">
+	            <a class="menu-item" href="#seller">
+	                <i class="bg-red-dark fa fa-lock"></i>Become Seller<i class="fa fa-circle"></i>  
+	            </a>
+            </div>
+            <div ng-if="flag">
+	            <a class="close-sidebar menu-item"  ng-click="logout()">
+	                <i class="bg-red-dark fa fa-times"></i>Logout<i class="fa fa-circle"></i>
+	            </a>
+            </div>
+        </div>    
+        <div class="sidebar-divider no-bottom">Copyright <span id="copyright-year-sidebar"></span>. All rights Reserved</div>
+    </div>
+</div>

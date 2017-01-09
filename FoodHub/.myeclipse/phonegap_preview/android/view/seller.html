@@ -1,0 +1,56 @@
+<div id="page-content" class="page-content">
+	<div id="page-content-scroll">
+
+		<div class="pageapp-login" ng-controller="SellerCtrl as ctrl">
+			<a href="#" class="pageapp-login-logo"> <img
+				src="theme/images/preload-logo.png">
+			</a>
+			<form name="sellerForm" novalidate autocomplete="off">
+
+    			<input type="button" ng-click="ctrl.capturePhotoWithData()"  value="Capture Photo" />
+					
+					
+				<input type="button" ng-click="ctrl.capturePhotoWithFile()" value="Upload Photo" />
+    
+				<div style="text-align: center;">
+					<img style="display:none;width:60px;height:60px;" id="smallImage" scr=""  /> 
+						
+					<img style="display:none;" id="largeImage" src=""  />
+				</div>
+				<div class="pageapp-login-input">
+					<input type="text" name="itemName" placeholder="Item Name"
+						id="itemName" ng-minlength="3" ng-model="ctrl.item.itemName"
+						required="required">
+				</div>
+				<div class="pageapp-login-input">
+					<input type="text" name="quantity" placeholder="Quantity"
+						ng-model="ctrl.item.quantity" id="quantity"
+						ng-model="ctrl.reset.newPass" ng-minlength="3" required="required">
+				</div>
+				<div class="pageapp-login-input">
+					<input type="text" name="deliveryTime"
+						ng-model="ctrl.item.deliveryTime" placeholder="Delivery Time"
+						id="deliveryTime" ng-minlength="3" required="required">
+				</div>
+				<div class="pageapp-login-input">
+					<input type="text" name="cost" ng-model="ctrl.item.cost"
+						placeholder="Cost" id="cost" ng-minlength="3" required="required">
+				</div>
+				<div>
+					<select class="dropdown-menu" name="deliveryType" id="deliveryType"
+						ng-model="ctrl.item.deliveryType">
+						<option class="dropdown-item" value="pickup">Pickup</option>
+						<option class="dropdown-item" value="delivery">Delivery</option>
+					</select>
+				</div>
+				<div class="pageapp-login-links">
+					<div class="clear">&nbsp;</div>
+				</div>
+				<input type="button" ng-click="ctrl.saveItem(sellerForm)"
+					class="buttonWrap button button-green contactSubmitButton no-bottom"
+					value="SUBMIT" />
+			</form>
+		</div>
+	</div>
+</div>
+

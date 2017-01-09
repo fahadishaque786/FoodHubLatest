@@ -1,0 +1,69 @@
+<div id="page-content" class="header-clear">
+	<div id="page-content-scroll">
+		
+		<!-- Swiper begin -->
+		<div class="home-round-slider no-material full-bottom" ng-controller="ProfileCtrl as ctrl">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                
+                	<div style="width: 300px;margin: 0px auto;">
+							<!-- begin form -->
+							<form name="profileForm" ng-submit="ctrl.editProfile(profileForm)" novalidate="novalidate" autocomplete="off">
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-user"></i> 
+									<input type="text" name="fullName" placeholder="Full Name" ng-model="ctrl.user.fullName" 
+										ng-minlength="3" required="required" />
+								</div>
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-envelope"></i> 
+									<input type="email" name="email" ng-model="ctrl.user.email" placeholder="Email"
+										required="required" />
+								</div>
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-user"></i> 
+									<input type="text" name="contactNumberOne" placeholder="Contact Number One" 
+										ng-model="ctrl.user.contactNumberOne" required="required" />
+								</div>
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-user"></i> 
+									<input type="text" name="contactNumberTwo" placeholder="Contact Number Two" 
+										ng-model="ctrl.user.contactNumberTwo" required="required" />
+								</div>
+								<div class="pageapp-login-input">
+									<i class="login-icon fa fa-envelope"></i>
+									<input name="address" placeholder="Address" ng-model="ctrl.user.address" required="required" /> 
+								</div>
+							</form>
+							<!-- end form -->
+						</div>
+                </div>
+                <div class="swiper-slide">
+                	<div class="profile-page-2 full-bottom" style="margin-top: 67px;">
+		<!-- 	            <div class="profile-page-2-cover">
+			                <img class="preload-image responsive-image" data-original="theme/images/pictures/9.jpg">
+			            </div> -->
+			            <div class="profile-page-2-thumbnail">
+			            	<img class="preload-image responsive-image" id="smallImage" scr=""  /> 
+							<img class="preload-image responsive-image" id="largeImage" src=""  />
+			            </div>
+			            <div class="content">
+			                <div class="profile-page-2-header">
+			                    <h3>Capture Your Photo</h3>
+			                    <!-- <div class="content no-material">
+						            <a href="#" class="icon icon-round facebook-bg"><i class="fa fa-facebook"></i></a>
+						            <a href="#" class="icon icon-round twitter-bg"><i class="fa fa-twitter"></i></a>
+					            </div> -->
+					            <div class="content no-material">
+					            	<input type="button" class="button no-border button-blue" ng-click="ctrl.capturePhotoWithData()"  value="Capture" />
+			                    	<input type="button" class="button no-border button-blue" ng-click="ctrl.capturePhotoWithFile()" value="Upload" />
+					            </div>
+			                </div>
+			            </div>
+			        </div>
+                </div>
+            </div>
+        </div>
+		<!-- Swiper end -->
+	</div>
+</div>
+

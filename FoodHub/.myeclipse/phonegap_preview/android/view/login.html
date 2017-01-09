@@ -1,0 +1,35 @@
+<div id="page-content" class="page-content">
+    <div id="page-content-scroll">
+        
+                <div class="pageapp-login">
+                   <div class="pageapp-login" ng-controller="LoginCtrl as ctrl">
+	                    <a href="#" class="pageapp-login-logo">
+	                        <img src="theme/images/preload-logo.png">
+	                    </a>
+	                    <form name="loginForm" novalidate="novalidate"  ng-submit="validateUser(loginForm)" autocomplete="off">
+	                    <div class="pageapp-login-input">
+	                        <i class="login-icon fa fa-user"></i>
+	                    	 <input type="text" name="userName" placeholder="userName" ng-model="user.userName" ng-minlength="4" required="required" />
+	                    </div>                
+	                    <div class="pageapp-login-input">
+	                        <i class="login-icon fa fa-lock"></i>
+	                       <input type="password" name="password" ng-model="user.password" placeholder="Password" ng-minlength="4" required="required"/>
+	                    </div>
+	                    <div class="pageapp-login-links">
+	                        <a href="#" class="page-login-forgot"><i class="fa fa-eye"></i>Forgot Credentials</a>
+	                        <a href="register.html" class="page-login-create">Create Account<i class="fa fa-user"></i></a>
+	                        <div class="clear"></div>
+	                    </div>
+	                    
+	                    <input type="submit" class="buttonWrap button button-green contactSubmitButton no-bottom" value="Login" />
+						</form>
+					</div>
+                    <div class="decoration"></div>
+                     <div class="pageapp-login-social" ng-controller="FacebookCtrl as fcbCtrl">
+                      <input  type="button" ng-click="fcbCtrl.onFacebookLogin()" class="button button-icon button-full facebook-bg" value="Login with Facebook"></input>
+                    </div> 
+                    
+                </div>
+            </div>
+        </div> 
+ 

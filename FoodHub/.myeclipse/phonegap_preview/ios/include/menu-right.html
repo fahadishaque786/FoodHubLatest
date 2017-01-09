@@ -1,0 +1,51 @@
+
+<div class="sidebar-right sidebar-light">
+    <div class="sidebar-scroll">
+        <div class="sidebar-header sidebar-header-background">
+            <h1>Food Hub</h1>
+            <h2>Just on click away.</h2>
+            <img class="sidebar-logo-image preload-image" data-original="theme/images/preload-logo.png">
+            <div class="sidebar-header-controls">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-phone"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="close-sidebar"><i class="fa fa-times"></i></a>
+            </div>
+        </div>   
+        <div class="sidebar-divider no-bottom">
+            SEND US A MESSAGE
+        </div>
+        <div class="sidebar-contact border-menu-dark">
+            <div class="sidebar-form contact-form no-bottom">
+                <p>
+                   Your message is important to us, and we'll get back to you in tops 48 hours
+                </p>
+                <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
+                    Awesome! We'll get back to you!
+                </div>
+                <form action="php/contact.php" method="post" class="contactForm" id="contactForm">
+                    <fieldset>
+                        <div class="formValidationError" id="contactNameFieldError">Name is required!</div>             
+                        <div class="formValidationError" id="contactEmailFieldError">Mail address required!</div> 
+                        <div class="formValidationError" id="contactEmailFieldError2">Mail address must be valid!</div> 
+                        <div class="formValidationError" id="contactMessageTextareaError">Message field is empty!</div>   
+                        <div class="formFieldWrap">
+                            <input onfocus="if (this.value=='Name') this.value = ''" onblur="if (this.value=='') this.value = 'Name'" type="text" name="contactNameField" value="Name" class="contactField requiredField" id="contactNameField"/>
+                        </div>
+                        <div class="formFieldWrap">
+                            <input onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value = 'Email'" type="text" name="contactEmailField" value="Email" class="contactField requiredField requiredEmailField" id="contactEmailField"/>
+                        </div>
+                        <div class="formTextareaWrap">
+                            <textarea onfocus="if (this.value=='Message') this.value = ''" onblur="if (this.value=='') this.value = 'Message'" name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea">Message</textarea>
+                        </div>
+                        <div class="formSubmitButtonErrorsWrap">
+                            <input type="submit" class="buttonWrap button button-green contactSubmitButton no-bottom" id="contactSubmitButton" value="SUBMIT" data-formId="contactForm"/>
+                        </div>
+                    </fieldset>
+                </form>       
+            </div>
+        </div>
+        <div class="sidebar-divider no-bottom">Copyright <span id="copyright-year-sidebar"></span>. All rights Reserved</div>       
+    </div>
+</div>  
