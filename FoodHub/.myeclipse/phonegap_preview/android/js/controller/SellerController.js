@@ -1,31 +1,33 @@
 'use strict';
 
-/**
- * seller
- */
-foodHub.controller('SellerCtrl', [ 'UserService', 'toastr',
-		function(UserService, toastr) {
+foodHub.controller('SellerCtrl', [ 'UserService', 'toastr','$scope',
+		function(UserService, toastr,$scope) {
 
 			var self = this;
 			self.item = {
-				itemName : '',
-				quantity : '',
-				deliveryTime : '',
-				cost : '',
-				deliveryType : ''
+					id : '0',
+					name : '',
+					quantity : '',
+					cost : '',
+					deliveryType : '',
+					deliveryTime : '',
+					base64Image : '',
+					latitude : '',
+					longitude : '',
+					userId : ''
 			};
+			
+			$scope.stepsModel = [];
 
-			self.ItemImage;
 
 			self.saveItem = function(form) {
 				toastr.clear();
 				if (form.$valid) {
+					var dd = angular.toJson(self.item);
+					UserService.saveProduct(self.item).then(function (response) {
+						toastr.warning(response);
+					});
 					
-					//var file = new File([self.ItemImage], "name");
-					//var byt = file.getAsBinary();
-					//alert(file);
-					
-					alert(self.ItemImage);
 
 				} else {
 					toastr.error('Please provide valid information.');
@@ -50,11 +52,17 @@ foodHub.controller('SellerCtrl', [ 'UserService', 'toastr',
 				smallImage.src = imageData;
 
 				self.ItemImage = imageData;
+				
+				//document.getElementById('ss').src=imageData;
+				
+				 
+				
+				 
 			}
 
 			function onPhotoFileSuccess(imageData) {
 				// Get image handle
-				console.log(JSON.stringify(imageData));
+				console.log(imageData);
 
 				// Get image handle
 				//
@@ -69,7 +77,22 @@ foodHub.controller('SellerCtrl', [ 'UserService', 'toastr',
 
 				self.ItemImage = imageData;
 				
+				//document.getElementById('ss').src=imageData;
+				
+				var blob = new Blob([imageData], {type: "image/jpg"});
+				
+				var reader = new FileReader();
+				reader.onload = $scope.imageIsLoaded; 
+				reader.readAsDataURL(blob);
+				 
+				
 			}
+			
+			 $scope.imageIsLoaded = function(e){
+			        $scope.$apply(function() {
+			            $scope.stepsModel.push(e.target.result);
+			        });
+			    }
 
 			self.onPhotoURISuccess = function(imageURI) {
 				// Uncomment to view the image file URI
