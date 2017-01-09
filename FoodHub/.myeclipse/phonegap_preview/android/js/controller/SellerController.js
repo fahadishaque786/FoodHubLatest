@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * seller
+ */
 foodHub.controller('SellerCtrl', [ 'UserService', 'toastr',
 		function(UserService, toastr) {
 
