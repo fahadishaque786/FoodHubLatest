@@ -7,7 +7,7 @@
 			</a>
 			<form name="sellerForm" novalidate autocomplete="off">
 
-    			<input type="button" ng-click="ctrl.capturePhotoWithData()"  value="Capture Photo" />
+    			<input type="button" ng-click="ctrl.capturePhotoWithCamera()"  value="Capture Photo" />
 					
 					
 				<input type="button" ng-click="ctrl.capturePhotoWithFile()" value="Upload Photo" />
@@ -42,9 +42,7 @@
 						<option class="dropdown-item" value="pickup">Pickup</option>
 						<option class="dropdown-item" value="delivery">Delivery</option>
 					</select>
-					<div ng-repeat="step in stepsModel">
-						<img  ng-src="{{step}}" />
-					</div>
+					
 				</div>
 				<div class="pageapp-login-links">
 					<div class="clear">&nbsp;</div>

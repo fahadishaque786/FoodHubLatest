@@ -55,7 +55,11 @@ foodHub.controller('SellerCtrl', [ 'UserService', 'toastr','$scope',
 				
 				//document.getElementById('ss').src=imageData;
 				
-				 
+				var blob = new Blob([imageData], {type: "image/jpg"});
+				
+				var reader = new FileReader();
+				reader.onload = $scope.imageIsLoaded; 
+				reader.readAsDataURL(blob);
 				
 				 
 			}
@@ -109,7 +113,7 @@ foodHub.controller('SellerCtrl', [ 'UserService', 'toastr','$scope',
 				largeImage.src = imageURI;
 			}
 
-			self.capturePhotoWithData = function() {
+			self.capturePhotoWithCamera = function() {
 				// Take picture using device camera and retrieve image as
 				// base64-encoded
 				// string
